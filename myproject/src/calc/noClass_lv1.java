@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class noClass_lv1 {
     public static void main(String[] args){
         char oper;
-        int num1, num2, result;
+        int num1, num2;
+        double result;
         String str;
         Scanner sc = new Scanner(System.in);
 
@@ -21,16 +22,16 @@ public class noClass_lv1 {
             System.out.print("두번째 숫자 입력 : ");
             num2 = sc.nextInt();
             if (num2 == 0 && oper == '/') {
-                System.out.println("0으로는 나눌 수 업습니다");
+                System.out.println("0으로는 나눌 수 없습니다");
                 continue;
             }
 
             if (oper == '+') result = num1 + num2;
             else if (oper == '-') result = num1 - num2;
             else if (oper == '*') result = num1 * num2;
-            else result = num1 / num2;
+            else result = num1 / (double)num2;
 
-            System.out.printf("계산 결과 = %d\n", result);
+            System.out.printf("계산 결과 = %f\n", result);
             System.out.print("종료하시겠습니까?(no or exit) : ");
             str = sc.next();
             if (str.equals("exit")) break;
